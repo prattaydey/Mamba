@@ -13,6 +13,10 @@ public class Deck{
   }
 
   public void reset(){
-    
+
+  }
+
+  public void shuffle(){
+
   }
 }
