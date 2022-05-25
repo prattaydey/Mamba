@@ -7,4 +7,4 @@
 
 ## How-To-Launch
 - Clone the repo and open it on your local machine via its terminal.
-- Compile and run Woo.java by entering the commands ```javac Uno.java``` followed by ```java Uno```.
+- Compile and run Woo.java by entering the commands ```javac Woo.java``` followed by ```java Woo```.
