@@ -2,8 +2,8 @@ import java.util.Arrays;
 
 public class Card{
 
-  private final String value;
-  private final String color;
+  private String value;
+  private String color;
 
   private final String[] allValues =
   { "Zero", "One", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine", "DrawTwo", "Skip", "Reverse", "Wild", "WildFour" };
@@ -13,6 +13,14 @@ public class Card{
   public Card(int number, int color){
     this.value = allValues[number];
     this.color = allColors[color];
+  }
+
+  public void setValue(int index){
+    value = allValues[index];
+  }
+
+  public void setColor(int index){
+    color = allColors[index];
   }
 
   public String getValue(){ return value; }
