@@ -1,4 +1,4 @@
-# Mamba :: Prattay Dey, Nafiz LABIB, Kartik Vanjani
+# Mamba :: Prattay Dey, Nafiz Labib, Kartik Vanjani
 
 ## Implementation of Uno Card Game
 - Traditional uno card game that is runnable through Terminal. For, it is single player with 1-3 bots. 
