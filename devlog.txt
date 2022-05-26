@@ -40,6 +40,15 @@ tales of wisdom gained...
     \____/_/ \_____\/ \___/_(   \_____\/ \_____\/ \_____\/
 ==============================================================
 
-5/25
+2022-05-25
+Prattay:
 - Still working on Deck class, having trouble setting up the deck with all the correct values and appropiate numbers of card.
 - Trying to use an array for the Master Deck, and then a Stack for the deck that is used and changed throughout a game.
+Nafiz: 
+- Began with proposal, put repo in order and looked over README changes.
+
+2022-05-26
+Prattay: 
+- Worked on Deck.java code
+Nafiz: 
+- Worked on project proposal
