@@ -10,9 +10,9 @@ public class Card{
 
   private final String[] allColors = { "Red", "Green", "Blue", "Yellow", "Wild" };
 
-  public Card(int number, int color){
+  public Card(int number, String color){
     this.value = allValues[number];
-    this.color = allColors[color];
+    this.color = color;
   }
 
   public void setValue(int index){

@@ -7,27 +7,70 @@ Four Wild cards and Four WildFour cards in entire Deck
 import java.util.Stack;
 
 public class Deck{
-  private Card[] cards;
-  private Stack<Card> cardsInDeck;
+  private Stack<Card> deck; // pile that you draw from
+  private Stack<Card> usedDeck; // pile that all the players stack onto
+
+  private int dupliZero = 1; // number of duplicate zeroes for each color
+  private int dupliNonZero = 2; // number of duplicate nonzeroes for each colors
+
 
   public Deck(){
-    cards = new Card[108];
-
-    // add cards with zero values
-    for(int i = 0; i < 5; i++){
-      cards[i].setValue(0);
-      cards[i].setColor(i);
-    }
-
-    // add cards with 1 - 9 values
-    for (int i = 5; i < 10; i++){
-      
-    }
+    deck = new Stack<Card>();
+    usedDeck = new Stack<Card>();
+    fillDeck();
+    shuffle();
   }
 
+  public void fillDeck(){
+    for (int i = 0; i < dupliZero; i++){
+      deck.push( new Card(0, "Red" ) );
+      deck.push( new Card(0, "Green" ) );
+      deck.push( new Card(0, "Blue" ) );
+      deck.push( new Card(0, "Yellow" ) );
+    }
 
-  public void reset(){
+    for (int j = 1; j < 10; j++){
+      for (int i = 0; i < dupliNonZero; i++){
+        deck.push( new Card(j, "Red" ) );
+        deck.push( new Card(j, "Green" ) );
+        deck.push( new Card(j, "Blue" ) );
+        deck.push( new Card(j, "Yellow" ) );
+      }
+    }
 
+    for (int i = 0; i < 2; i++ ){
+      // adds all the DrawTwo
+      deck.push( new Card(10, "Red" ) );
+      deck.push( new Card(10, "Green" ) );
+      deck.push( new Card(10, "Blue" ) );
+      deck.push( new Card(10, "Yellow" ) );
+
+      // adds all the Skips
+      deck.push( new Card(11, "Red" ) );
+      deck.push( new Card(11, "Green" ) );
+      deck.push( new Card(11, "Blue" ) );
+      deck.push( new Card(11, "Yellow" ) );
+
+      // adds all the Reverse
+      deck.push( new Card(12, "Red" ) );
+      deck.push( new Card(12, "Green" ) );
+      deck.push( new Card(12, "Blue" ) );
+      deck.push( new Card(12, "Yellow" ) );
+    }
+
+    for (int i = 0; i < 4; i++ ){
+      // adds all the Wilds
+      deck.push( new Card(13, "Wild" ) );
+      deck.push( new Card(13, "Wild" ) );
+      deck.push( new Card(13, "Wild" ) );
+      deck.push( new Card(13, "Wild" ) );
+
+      // adds all the WildFour
+      deck.push( new Card(14, "Wild" ) );
+      deck.push( new Card(14, "Wild" ) );
+      deck.push( new Card(14, "Wild" ) );
+      deck.push( new Card(14, "Wild" ) );
+    }
   }
 
   public void shuffle(){
