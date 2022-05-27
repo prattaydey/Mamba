@@ -97,7 +97,8 @@ public class Deck{
   public boolean isEmpty(){ return deck.isEmpty(); }
 
   public static void main(String[] args){
-    Deck test = new Deck();
-    System.out.println( test.draw() );
+    // // test for shuffle
+    // Deck test = new Deck();
+    // System.out.println( test.draw() );
   }
 }
