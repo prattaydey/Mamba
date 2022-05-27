@@ -34,4 +34,8 @@ public class Card{
         || this.getColor().equals( "WildFour" );
   }
 
+  public String toString(){
+    return value + " " + color;
+  }
+
 }

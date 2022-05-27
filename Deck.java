@@ -4,6 +4,7 @@ Each color: one card for 0 / two cards each for 1-9 / two DrawTwo cards / two Sk
 Four Wild cards and Four WildFour cards in entire Deck
 */
 
+import java.util.Collections;
 import java.util.Stack;
 
 public class Deck{
@@ -74,6 +75,29 @@ public class Deck{
   }
 
   public void shuffle(){
+    Collections.shuffle(deck);
+  }
 
+  public Card draw(){
+    return deck.pop();
+  }
+
+  public void useCard(Card c){
+    usedDeck.push(c);
+  }
+
+  // if deck is empty, reuse old cards in the deck and shuffle
+  public void remix(){
+    while ( !usedDeck.isEmpty() ){
+      deck.push( usedDeck.pop() );
+      shuffle();
+    }
+  }
+
+  public boolean isEmpty(){ return deck.isEmpty(); }
+
+  public static void main(String[] args){
+    Deck test = new Deck();
+    System.out.println( test.draw() );
   }
 }
