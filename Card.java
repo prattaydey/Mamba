@@ -35,7 +35,27 @@ public class Card{
   }
 
   public String toString(){
-    return value + " " + color;
+    return color + value;
+
+    // String retVal = "";
+    // if (color.equals("Red")) { retVal += "\033[31m"; }
+    // if (color.equals("Green")) { retVal += "\033[32m"; }
+    // if (color.equals("Blue")) { retVal += "\033[34m"; }
+    // if (color.equals("Yellow")) { retVal += "\033[33m"; }
+    // if (color.equals("Wild")) { retVal += "\033[1m"; }
+    //
+    // if (value.equals("Zero")) { retVal += "0"; }
+    // if (value.equals("One")) { retVal += "1"; }
+    // if (value.equals("Two")) { retVal += "2"; }
+    // if (value.equals("Three")) { retVal += "3"; }
+    // if (value.equals("Four")) { retVal += "4"; }
+    // if (value.equals("Five")) { retVal += "5"; }
+    // if (value.equals("Six")) { retVal += "6"; }
+    // if (value.equals("Seven")) { retVal += "7"; }
+    // if (value.equals("Eight")) { retVal += "8"; }
+    // if (value.equals("Nine")) { retVal += "9"; }
+    //
+    // return retVal;
   }
 
 }
