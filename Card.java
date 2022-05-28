@@ -35,27 +35,32 @@ public class Card{
   }
 
   public String toString(){
-    return color + value;
 
-    // String retVal = "";
-    // if (color.equals("Red")) { retVal += "\033[31m"; }
-    // if (color.equals("Green")) { retVal += "\033[32m"; }
-    // if (color.equals("Blue")) { retVal += "\033[34m"; }
-    // if (color.equals("Yellow")) { retVal += "\033[33m"; }
-    // if (color.equals("Wild")) { retVal += "\033[1m"; }
-    //
-    // if (value.equals("Zero")) { retVal += "0"; }
-    // if (value.equals("One")) { retVal += "1"; }
-    // if (value.equals("Two")) { retVal += "2"; }
-    // if (value.equals("Three")) { retVal += "3"; }
-    // if (value.equals("Four")) { retVal += "4"; }
-    // if (value.equals("Five")) { retVal += "5"; }
-    // if (value.equals("Six")) { retVal += "6"; }
-    // if (value.equals("Seven")) { retVal += "7"; }
-    // if (value.equals("Eight")) { retVal += "8"; }
-    // if (value.equals("Nine")) { retVal += "9"; }
-    //
-    // return retVal;
+    String retVal = "";
+    if (color.equals("Red")) { retVal += "\u001b[31m"; }
+    if (color.equals("Green")) { retVal += "\u001b[32m"; }
+    if (color.equals("Blue")) { retVal += "\u001b[36m"; }
+    if (color.equals("Yellow")) { retVal += "\u001b[33m"; }
+    if (color.equals("Wild")) { retVal += "\u001b[37m"; }
+
+    if (value.equals("Zero")) { retVal += "0"; }
+    if (value.equals("One")) { retVal += "1"; }
+    if (value.equals("Two")) { retVal += "2"; }
+    if (value.equals("Three")) { retVal += "3"; }
+    if (value.equals("Four")) { retVal += "4"; }
+    if (value.equals("Five")) { retVal += "5"; }
+    if (value.equals("Six")) { retVal += "6"; }
+    if (value.equals("Seven")) { retVal += "7"; }
+    if (value.equals("Eight")) { retVal += "8"; }
+    if (value.equals("Nine")) { retVal += "9"; }
+
+    if (value.equals("DrawTwo")) { retVal += "+2"; }
+    if (value.equals("Skip")) { retVal += "S"; }
+    if (value.equals("Reverse")) { retVal += "R"; }
+    if (value.equals("Wild")) { retVal += "W"; }
+    if (value.equals("WildFour")) { retVal += "W4"; }
+    
+    return retVal + "\u001b[0m";
   }
 
 }
