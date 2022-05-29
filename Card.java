@@ -27,11 +27,17 @@ public class Card{
 
   public String getColor(){ return color; }
 
-  public boolean isValid(Card previous){
-    return this.getValue().equals( previous.getValue() )
-        || this.getColor().equals( previous.getColor() )
-        || this.getColor().equals( "Wild" )
-        || this.getColor().equals( "WildFour" );
+  public boolean isValid(Deck curr){
+    // if pile is empty, then card is automatically valid
+    if ( curr.peekTop() == null ) { return true; }
+
+    // else check the previous card from the pile
+    else {
+      Card previous = curr.peekTop();
+      return this.getValue().equals( previous.getValue() )
+          || this.getColor().equals( previous.getColor() )
+          || this.getColor().equals( "Wild" );
+    }
   }
 
   public String toString(){
@@ -59,7 +65,7 @@ public class Card{
     if (value.equals("Reverse")) { retVal += "R"; }
     if (value.equals("Wild")) { retVal += "W"; }
     if (value.equals("WildFour")) { retVal += "W4"; }
-    
+
     return retVal + "\u001b[0m";
   }
 

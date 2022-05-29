@@ -78,12 +78,25 @@ public class Deck{
     Collections.shuffle(deck);
   }
 
+  // when player draws a card, remove it from the deck
   public Card draw(){
+    if ( deck.isEmpty() ){
+      remix();
+    }
     return deck.pop();
   }
 
+  // when player selects a card, add it to the current pile of used cards
   public void useCard(Card c){
     usedDeck.push(c);
+  }
+
+  // used to see the latest card that was given
+  public Card peekTop(){
+    if (usedDeck.isEmpty() ){ return null; }
+    else {
+      return usedDeck.peek();
+    }
   }
 
   // if deck is empty, reuse old cards in the deck and shuffle

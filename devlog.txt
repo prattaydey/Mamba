@@ -9,13 +9,13 @@ Uno Card Game
 /////////// Zone of Reflection \\\\\\\\\\\
 ------------------------------------------
 OBSTACLES OVERCOME
+- Got our ANSII implementation for each card ToString to work. Now, our cards are printed with their respective colors.
+- "Remix" method that takes into account when all cards in the deck are used up.
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 UNRESOLVED ISSUES
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 - Most efficient way to set up our deck?
-- What do we do in the extreme case that we use up all the cards in the deck by the time the game ends? Should we make a new deck or "reuse" the used deck? 
-- In our toString method, we can easily achieve our task of displaying cards by printing the color and value. We tried to go beyond that by changing the color of the text printed in the terminal using ANSI color codes. However,it doesn't print anything visible. There's a line of empty space between the two lines we run code, which means that something's supposed to be printed there, but for some reason it isn't. Our terminal should support color, considering the different colors it uses, so that's not the problem.  
 
 COOL STUFF LEARNED
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -43,15 +43,18 @@ LESSONS LEARNED
 Prattay:
 - Still working on Deck class, having trouble setting up the deck with all the correct values and appropiate numbers of card.
 - Trying to use an array for the Master Deck, and then a Stack for the deck that is used and changed throughout a game.
-Nafiz: 
+Nafiz:
 - Began with proposal, put repo in order and looked over README changes.
 
 2022-05-26
-Prattay: 
+Prattay:
 - Worked on Deck.java code
-Nafiz: 
+Nafiz:
 - Worked on project proposal
 
 2022-05-27
 Prattay + Nafiz:
 - Worked on Player.java, experimented with ANSI color codes
+
+2022-05-28
+Prattay: Got ANSII color codes to work
