@@ -66,4 +66,7 @@ Prattay + Nafiz:
 Prattay: Got ANSII color codes to work
 
 2022-05-29
-Prattay: Finished Player and Bot for now, starting on Woo game class
+Prattay: Finished Player and Bot for now, starting on Woo game class 
+
+2022-05-30
+Nafiz: Created UML diagrams
