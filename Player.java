@@ -28,22 +28,19 @@ public class Player extends Participant{
   }
 
   public static void main(String[] args){
-    // Player testPlayer = new Player();
-    // Bot testBot = new Bot();
-    // Deck testDeck = new Deck();
-    //
-    //
-    // for (int i = 0; i < 5; i++){
-    //   testPlayer.draw( testDeck.draw() );
-    //   testBot.draw( testDeck.draw() );
-    // }
-    //
-    // for (int j = 0; j < 6; j++){
-    //   testBot.select( testDeck );
-    //   testPlayer.select(0, testDeck);
+    Player testPlayer = new Player();
+    Bot testBot = new Bot();
+    Deck testDeck = new Deck();
 
+
+    for (int i = 0; i < 5; i++){
+      testPlayer.draw( testDeck.draw() );
+      testBot.draw( testDeck.draw() );
     }
 
+    for (int j = 0; j < 6; j++){
+      testBot.select( testDeck );
+      testPlayer.select(0, testDeck);
+    }
   }
-
 }

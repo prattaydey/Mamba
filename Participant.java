@@ -7,6 +7,12 @@ public class Participant{
     hand = new ArrayList<Card>();
   }
 
+  public void setup(Deck deck){
+    for (int i = 0; i < 7; i++){
+      hand.add( deck.draw() );
+    }
+  }
+
   public void draw(Card c){
     hand.add(c);
   }
