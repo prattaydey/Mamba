@@ -1,3 +1,9 @@
+/* 
+Team Mamba: Prattay Dey, Kartik Vanjani, Nafiz Labib
+APCS PD8
+FP
+??-06-2022
+*/
 import java.util.Arrays;
 
 public class Card{
