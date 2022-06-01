@@ -1,7 +1,7 @@
 # Mamba :: Prattay Dey, Nafiz Labib, Kartik Vanjani
 
 ## Implementation of Uno Card Game
-- Traditional uno card game that is runnable through Terminal. For, it is single player with 1-3 bots. 
+- Traditional uno card game that is runnable through Terminal. It is single player with 1-3 bots. 
 - Might add multi-player functionality.
 - Working with base rules, might expand into things like 0-7 switching hands, flipped cards, etc.
 
