@@ -19,6 +19,14 @@ public class Player extends Participant{
     return false;
   }
 
+  public void draw( Deck curr ){
+    hand.add( curr.draw() );
+    
+    // checks to see if the new drawn card is able to be put on the pile
+    select( hand.size() - 1, curr);
+  }
+
+
   public String toString(){
     String retVal = "[  ";
     for (int i = 0; i < size(); i++){

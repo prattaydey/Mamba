@@ -20,7 +20,7 @@ public class Woo{
     deck = new Deck();
     numBots = 0;
     totalParticipants = new ArrayList<Participant>();
-    totalBots = new Bots[0];
+    totalBots = new Bot[0];
     user = new Player();
 
     // will be used to facilitate each participant's turns
@@ -44,9 +44,13 @@ public class Woo{
       totalBots = new Bot[1];
     }
 
+    // sets up the hand of each participant at the start of a game
     while ( it.hasNext() ){
-
+      Participant participant = it.next();
+      participant.setup( deck );
     }
+
+    
 
   }
 }

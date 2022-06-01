@@ -1,4 +1,4 @@
-/* 
+/*
 Team Mamba: Prattay Dey, Kartik Vanjani, Nafiz Labib
 APCS PD8
 FP
@@ -19,9 +19,6 @@ public class Participant{
     }
   }
 
-  public void draw(Card c){
-    hand.add(c);
-  }
 
   public int size(){ return hand.size(); }
 }

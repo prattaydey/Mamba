@@ -1,4 +1,4 @@
-/* 
+/*
 Team Mamba: Prattay Dey, Kartik Vanjani, Nafiz Labib
 APCS PD8
 FP
@@ -21,8 +21,15 @@ public class Bot extends Participant{
       }
     }
     //else, if no valid cards in hand --> draw a card
-    draw( curr.draw() );
+    draw( curr );
     System.out.println("Bot has to draw " + hand.get( hand.size() - 1) );
+  }
+
+  public void draw( Deck curr ){
+    hand.add( curr.draw() );
+
+    // checks to see if the new drawn card is able to be put on the pile
+    select(curr);
   }
 
   // will be changed later
