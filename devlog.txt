@@ -20,6 +20,8 @@ UNRESOLVED ISSUES
 - Have to review Iterator, will likely use to go through each player's turns.
 - Still need to adjust game to take user input
 - Still need to implement functionality for skip, reverse, and other special cards.
+- When a Player draws a card and it is valid, will it be automatically put onto the pile, or will it be up to the player's decision?
+- At the start of the game, should the stack be empty, or do we take a card from the deck and put it as the first card in play?
 
 COOL STUFF LEARNED
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -69,7 +71,12 @@ Prattay: Got ANSII color codes to work
 Prattay: Finished Player and Bot for now, starting on Woo game class 
 
 2022-05-30
+Prattay: Working on Woo.java
 Nafiz + Kartik: Created UML diagrams
 
 2022-05-31
+Prattay: Working on Woo.java, finished num of bot selection at the start of each game
 Nafiz: Created flowchart
+
+2022-06-01
+Prattay: Working on Woo.java
