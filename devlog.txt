@@ -12,6 +12,7 @@ OBSTACLES OVERCOME
 - Got our ANSII implementation for each card ToString to work. Now, our cards are printed with their respective colors.
 - "Remix" method that takes into account when all cards in the deck are used up.
 - Fixed isValid method to take into account when the game has just started, and any card is valid to put down as the initial card in the pile.
+- Fixed Bot method that kept drawing cards from the deck multiple times within one turn. 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 UNRESOLVED ISSUES
@@ -21,7 +22,6 @@ UNRESOLVED ISSUES
 - Still need to adjust game to take user input
 - Still need to implement functionality for skip, reverse, and other special cards.
 - When a Player draws a card and it is valid, will it be automatically put onto the pile, or will it be up to the player's decision?
-- At the start of the game, should the stack be empty, or do we take a card from the deck and put it as the first card in play?
 
 COOL STUFF LEARNED
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -29,7 +29,7 @@ COOL STUFF LEARNED
 
 MID-DEVELOPMENT DESIGN CHANGES
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
--
+- At the start of the game, a random card is played from the deck, rather than the stack being empty as it would give advantage to the first player of the game. 
 
 LESSONS LEARNED
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -80,4 +80,8 @@ Nafiz: Created flowchart
 
 2022-06-01
 Prattay: Working on Woo.java
+Kartik+Nafiz: Helping clarify methods.
+
+2022-06-02
+Prattay: Working on Woo.java. fixing errors with Bot and Player classes
 Kartik+Nafiz: Helping clarify methods.
