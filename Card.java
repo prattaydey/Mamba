@@ -35,12 +35,10 @@ public class Card{
 
   public boolean isValid(Deck curr){
     // check the previous card from the pile
-    else {
-      Card previous = curr.peekTop();
-      return this.getValue().equals( previous.getValue() )
-          || this.getColor().equals( previous.getColor() )
-          || this.getColor().equals( "Wild" );
-    }
+    Card previous = curr.peekTop();
+    return this.getValue().equals( previous.getValue() )
+        || this.getColor().equals( previous.getColor() )
+        || this.getColor().equals( "Wild" );
   }
 
   public String toString(){

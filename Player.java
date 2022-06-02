@@ -21,7 +21,7 @@ public class Player extends Participant{
 
   public void draw( Deck curr ){
     hand.add( curr.draw() );
-    
+
     // checks to see if the new drawn card is able to be put on the pile
     select( hand.size() - 1, curr);
   }
@@ -40,11 +40,8 @@ public class Player extends Participant{
     Bot testBot = new Bot();
     Deck testDeck = new Deck();
 
-
-    for (int i = 0; i < 5; i++){
-      testPlayer.draw( testDeck.draw() );
-      testBot.draw( testDeck.draw() );
-    }
+    testPlayer.setup( testDeck );
+    testBot.setup( testDeck );
 
     for (int j = 0; j < 6; j++){
       testBot.select( testDeck );
