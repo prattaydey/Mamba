@@ -80,3 +80,4 @@ Nafiz: Created flowchart
 
 2022-06-01
 Prattay: Working on Woo.java
+Kartik+Nafiz: Helping clarify methods.
