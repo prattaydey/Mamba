@@ -20,6 +20,7 @@ public class Deck{
     usedDeck = new Stack<Card>();
     fillDeck();
     shuffle();
+    useCard( draw() );
   }
 
   public void fillDeck(){
@@ -93,10 +94,7 @@ public class Deck{
 
   // used to see the latest card that was given
   public Card peekTop(){
-    if (usedDeck.isEmpty() ){ return null; }
-    else {
-      return usedDeck.peek();
-    }
+    return usedDeck.peek();
   }
 
   // if deck is empty, reuse old cards in the deck and shuffle

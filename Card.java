@@ -1,4 +1,4 @@
-/* 
+/*
 Team Mamba: Prattay Dey, Kartik Vanjani, Nafiz Labib
 APCS PD8
 FP
@@ -34,10 +34,7 @@ public class Card{
   public String getColor(){ return color; }
 
   public boolean isValid(Deck curr){
-    // if pile is empty, then card is automatically valid
-    if ( curr.peekTop() == null ) { return true; }
-
-    // else check the previous card from the pile
+    // check the previous card from the pile
     else {
       Card previous = curr.peekTop();
       return this.getValue().equals( previous.getValue() )

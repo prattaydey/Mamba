@@ -20,6 +20,8 @@ UNRESOLVED ISSUES
 - Have to review Iterator, will likely use to go through each player's turns.
 - Still need to adjust game to take user input
 - Still need to implement functionality for skip, reverse, and other special cards.
+- When a Player draws a card and it is valid, will it be automatically put onto the pile, or will it be up to the player's decision?
+- At the start of the game, should the stack be empty, or do we take a card from the deck and put it as the first card in play?
 
 COOL STUFF LEARNED
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

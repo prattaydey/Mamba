@@ -50,7 +50,7 @@ public class Woo{
       participant.setup( deck );
     }
 
-    
+
 
   }
 }
