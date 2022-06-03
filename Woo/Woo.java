@@ -50,13 +50,38 @@ public class Woo{
       totalBots = new Bot[1];
     }
 
+    // adds all the participants, including player and her bots
+    totalParticipants.add( user );
+    for (int i = 0; i < totalBots.length; i++){
+      totalParticipants.add( totalBots[i] );
+    }
+
     // sets up the hand of each participant at the start of a game
     while ( it.hasNext() ){
       Participant participant = it.next();
       participant.setup( deck );
     }
+  }
 
-    
+  public void turns(){
+    while ( it.hasNext() ){
+      // checks to see if next participant is either a Player or a bot
+      Participant participant = it.next();
+      if ( participant instanceof Bot ){
+        participant = (Bot) participant;
+        participant.select( deck );
+      }
+      else{
+        participant = (Player) participant;
+        System.out.println("Your hand is " + participant);
+        System.out.println("Choose what card you would like to select (1 - " + participant.size() + 1 + ") " + "OR draw from the deck" );
+      }
+
+    }
+  }
+
+
+  public static void main(String[] args){
 
   }
 }
