@@ -12,7 +12,7 @@ OBSTACLES OVERCOME
 - Got our ANSII implementation for each card ToString to work. Now, our cards are printed with their respective colors.
 - "Remix" method that takes into account when all cards in the deck are used up.
 - Fixed isValid method to take into account when the game has just started, and any card is valid to put down as the initial card in the pile.
-- Fixed Bot method that kept drawing cards from the deck multiple times within one turn. 
+- Fixed Bot method that kept drawing cards from the deck multiple times within one turn.
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 UNRESOLVED ISSUES
@@ -22,6 +22,7 @@ UNRESOLVED ISSUES
 - Still need to adjust game to take user input
 - Still need to implement functionality for skip, reverse, and other special cards.
 - When a Player draws a card and it is valid, will it be automatically put onto the pile, or will it be up to the player's decision?
+- java.util.ConcurrentModificationException
 
 COOL STUFF LEARNED
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -29,7 +30,8 @@ COOL STUFF LEARNED
 
 MID-DEVELOPMENT DESIGN CHANGES
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-- At the start of the game, a random card is played from the deck, rather than the stack being empty as it would give advantage to the first player of the game. 
+- At the start of the game, a random card is played from the deck, rather than the stack being empty as it would give advantage to the first player of the game.
+- Might possibly use ListIterator to get bi-directional functionality.
 
 LESSONS LEARNED
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -68,7 +70,7 @@ Prattay + Nafiz:
 Prattay: Got ANSII color codes to work
 
 2022-05-29
-Prattay: Finished Player and Bot for now, starting on Woo game class 
+Prattay: Finished Player and Bot for now, starting on Woo game class
 
 2022-05-30
 Prattay: Working on Woo.java
@@ -85,3 +87,9 @@ Kartik+Nafiz: Helping clarify methods.
 2022-06-02
 Prattay: Working on Woo.java. fixing errors with Bot and Player classes
 Kartik+Nafiz: Helping clarify methods.
+
+2022-06-03
+Prattay: Working on playTurns() method in Woo.java
+
+2022-06-04
+Prattay: Trying to fix ConcurrentModificationException while using Iterator
