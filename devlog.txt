@@ -93,3 +93,7 @@ Prattay: Working on playTurns() method in Woo.java
 
 2022-06-04
 Prattay: Trying to fix ConcurrentModificationException while using Iterator
+Kartik: Helping fix iterator.
+
+2022-06-06
+Kartik: Updated all files, updated README.

@@ -1,3 +1,9 @@
+/*
+Team Mamba: Prattay Dey, Nafiz Labib, Kartik Vanjani
+APCS PD8
+FP
+2022-06-10F
+*/
 import java.util.ArrayList;
 public class Player extends Participant{
 
