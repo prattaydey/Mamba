@@ -15,7 +15,7 @@ public class Woo{
   private int numBots;
   private ArrayList<Participant> totalParticipants;
   private Participant[] totalBots;
-  private Participant user;
+  private Player user;
   private Iterator<Participant> it;
 
   private InputStreamReader isr;
@@ -52,7 +52,7 @@ public class Woo{
     // adds all the participants, including player and her bots
     totalParticipants.add( user );
     for (int i = 0; i < numBots; i++){
-      totalParticipants.add(new Bot());
+      totalParticipants.add(new Bot("Bot " + (i + 1)));
     }
 
     // sets up the hand of each participant at the start of a game
@@ -61,7 +61,11 @@ public class Woo{
     //   p.setup( deck );
     // }
 
-    for (Participant p : totalParticipants) p.setup(deck);
+    for (Participant p : totalParticipants){
+      p.setup(deck);
+    }
+    // prints the first card on the stack at beginning of game
+    System.out.println("The top of the deck is " + deck.peekTop() );
   }
 
   public void playTurns(){
@@ -75,16 +79,47 @@ public class Woo{
       else{
         user = (Player) participant;
         System.out.println("Your hand is " + participant);
-        System.out.println("Choose what card you would like to select (1 - " + (participant.size() ) + ") " + "OR draw from the deck" );
-      }
+        System.out.println("Choose what card you would like to select (1 - " + (participant.size() ) + ") " + "OR draw from the deck (0)" );
 
+        int cardIndex = 0;
+        try {
+          cardIndex = Integer.parseInt(in.readLine());
+        }
+        catch ( IOException e ) { }
+
+        // if input is 0, draw a card from deck
+        if (cardIndex == 0){
+          user.draw(deck);
+        }
+        else{
+          // else selects the inputted index
+          user.select(cardIndex, deck);
+        }
+      }
     }
+
   }
+
+  public void game(){
+    welcome();
+    boolean isEmpty = false;
+
+    // runs until there is a clear winner
+      // checks the size of each participant's hand & if it is empty
+      while ( it.hasNext() ){
+        playTurns();
+        Participant p = it.next();
+        if (p.size() == 0){
+          isEmpty = true;
+          break;
+        }
+      }
+    }
+
 
 
   public static void main(String[] args){
     Woo testGame = new Woo();
-    testGame.welcome();
-    testGame.playTurns();
+    testGame.game();
   }
 }

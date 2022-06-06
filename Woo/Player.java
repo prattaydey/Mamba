@@ -6,11 +6,11 @@ public class Player extends Participant{
   }
 
   public boolean select(int i, Deck curr){
-    Card val = hand.get(i);
+    Card val = hand.get(i - 1);
     // checks to see if the selected card is valid compared to the previous one
     if ( val.isValid( curr ) ){
       System.out.println( "You " + toString() + " play " + val + " on " + curr.peekTop() );
-      curr.useCard( hand.remove(i) );
+      curr.useCard( hand.remove(i - 1) );
       return true;
     }
     else {
@@ -36,16 +36,16 @@ public class Player extends Participant{
   }
 
   public static void main(String[] args){
-    Player testPlayer = new Player();
-    Bot testBot = new Bot();
-    Deck testDeck = new Deck();
-
-    testPlayer.setup( testDeck );
-    testBot.setup( testDeck );
-
-    for (int j = 0; j < 6; j++){
-      testBot.select( testDeck );
-      testPlayer.select(0, testDeck);
-    }
+    // Player testPlayer = new Player();
+    // Bot testBot = new Bot();
+    // Deck testDeck = new Deck();
+    //
+    // testPlayer.setup( testDeck );
+    // testBot.setup( testDeck );
+    //
+    // for (int j = 0; j < 6; j++){
+    //   testBot.select( testDeck );
+    //   testPlayer.select(0, testDeck);
+    // }
   }
 }

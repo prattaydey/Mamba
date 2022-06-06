@@ -5,9 +5,11 @@ FP
 ??-06-2022
 */
 public class Bot extends Participant{
+  private String name;
 
-  public Bot(){
+  public Bot(String name){
     super();
+    this.name = name;
   }
 
   public void select(Deck curr){
@@ -16,7 +18,7 @@ public class Bot extends Participant{
       Card card = hand.get(i);
       // finds the first valid card and selects it
       if ( card.isValid(curr) ){
-        System.out.println( "Bot " + toString() + " plays " + card + " on " + curr.peekTop() );
+        System.out.println( name + " " + toString() + " plays " + card + " on " + curr.peekTop() );
         curr.useCard( hand.remove(i) );
         canPlay = true;
         break;
@@ -25,7 +27,7 @@ public class Bot extends Participant{
     if (canPlay == false){
       //else, if no valid cards in hand --> draw a card
       draw( curr );
-      System.out.println("Bot has to draw " + hand.get( hand.size() - 1) );
+      System.out.println(name + " has to draw " + hand.get( hand.size() - 1) );
     }
   }
 
