@@ -8,7 +8,6 @@ import java.io.InputStreamReader;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Iterator;
 
 public class Woo{
   private Deck deck;
@@ -16,7 +15,6 @@ public class Woo{
   private ArrayList<Participant> totalParticipants;
   private Participant[] totalBots;
   private Player user;
-  private Iterator<Participant> it;
 
   private InputStreamReader isr;
   private BufferedReader in;
@@ -30,7 +28,6 @@ public class Woo{
     user = new Player();
 
     // will be used to facilitate each participant's turns
-    it = totalParticipants.iterator();
 
     isr = new InputStreamReader(System.in);
     in = new BufferedReader(isr);
@@ -102,18 +99,9 @@ public class Woo{
 
   public void game(){
     welcome();
-    boolean isEmpty = false;
-
     // runs until there is a clear winner
       // checks the size of each participant's hand & if it is empty
-      while ( it.hasNext() ){
-        playTurns();
-        Participant p = it.next();
-        if (p.size() == 0){
-          isEmpty = true;
-          break;
-        }
-      }
+    playTurns();
     }
 
 
