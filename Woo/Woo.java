@@ -27,6 +27,11 @@ public class Woo{
     totalBots = new Bot[0];
     user = new Player();
 
+<<<<<<< HEAD
+    // will be used to facilitate each participant's turns
+
+=======
+>>>>>>> 5f546c1d3ce8d1e2ebc939dd15d9418ec819e7d5
     isr = new InputStreamReader(System.in);
     in = new BufferedReader(isr);
   }
@@ -107,9 +112,14 @@ public class Woo{
     boolean canPlay = true;
     welcome();
     // runs until there is a clear winner
+<<<<<<< HEAD
+      // checks the size of each participant's hand & if it is empty
+    playTurns();
+=======
     // checks the size of each participant's hand & if it is empty
     while ( canPlay ){
       playTurns();
+<<<<<<< HEAD
       for (Participant p : totalParticipants){
         if (p.size() == 0 && p instanceof Bot){
           System.out.println("Sorry, but you have lost.");
@@ -120,6 +130,9 @@ public class Woo{
           canPlay = false;
       }
      }
+=======
+>>>>>>> 5f546c1d3ce8d1e2ebc939dd15d9418ec819e7d5
+>>>>>>> 36287e4efa25c162f0b9ab13a387761845735c6a
     }
   }
 
