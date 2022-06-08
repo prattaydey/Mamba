@@ -20,7 +20,7 @@ public class Player extends Participant{
       return true;
     }
     else {
-      System.out.println("This card is not valid." );
+      System.out.println("This card is not valid. Pick another card or draw" );
     }
     return false;
   }

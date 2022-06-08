@@ -31,7 +31,8 @@ COOL STUFF LEARNED
 MID-DEVELOPMENT DESIGN CHANGES
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 - At the start of the game, a random card is played from the deck, rather than the stack being empty as it would give advantage to the first player of the game.
-- Might possibly use ListIterator to get bi-directional functionality.
+- Instead of using Iterator, we chose to do simpler for loops.
+- Might use deques to hold Participants rather than ArrayList
 
 LESSONS LEARNED
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -96,4 +97,11 @@ Prattay: Trying to fix ConcurrentModificationException while using Iterator
 Kartik: Helping fix iterator.
 
 2022-06-06
+Prattay: working on game() method in Woo
 Kartik: Updated all files, updated README.
+
+2022-06-07
+Prattay: working on game() method in Woo
+
+2022-06-08
+Prattay: Starting implementation of special cards

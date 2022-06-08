@@ -59,11 +59,11 @@ public class Woo{
     for (Participant p : totalParticipants){
       p.setup(deck);
     }
-    // prints the first card on the stack at beginning of game
-    System.out.println("The top of the deck is " + deck.peekTop() );
   }
 
   public void playTurns(){
+    boolean cardPlayed = false;
+
     for (Participant participant : totalParticipants) {
       // checks to see if next participant is either a Player or a bot
       // Participant participant = it.next();
@@ -73,48 +73,53 @@ public class Woo{
       }
       else{
         user = (Player) participant;
-        System.out.println("Your hand is " + participant);
-        System.out.println("Choose what card you would like to select (1 - " + (participant.size() ) + ") " + "OR draw from the deck (0)" );
+        while ( cardPlayed == false ){
+          System.out.println( "The top of the deck is " + deck.peekTop() );
+          System.out.println("Your hand is " + participant);
+          System.out.println("Choose what card you would like to select (1 - " + (participant.size() ) + ") " + "OR draw from the deck (0)" );
 
-        int cardIndex = 0;
-        try {
-          cardIndex = Integer.parseInt(in.readLine());
-        }
-        catch ( IOException e ) { }
+          int cardIndex = 0;
+          try {
+            cardIndex = Integer.parseInt(in.readLine());
+          }
+          catch ( IOException e ) { }
 
-        // if input is 0, draw a card from deck
-        if (cardIndex == 0){
-          user.draw(deck);
-        }
-        else{
-          // else selects the inputted index
-          user.select(cardIndex, deck);
+          // if input is 0, draw a card from deck
+          if (cardIndex == 0){
+            user.draw(deck);
+            cardPlayed = true;
+          }
+          else if (cardIndex > 0 && cardIndex < user.size() ){
+            // else  if index is valid, selects the inputted index
+            user.select(cardIndex, deck);
+            cardPlayed = true;
+
+          }
+          else{
+
+          }
         }
       }
     }
   }
-
-  public boolean keepPlaying(){
-    boolean canPlay = true;
-    for (Participant p : totalParticipants){
-      if (p.size() == 0 && p instanceof Bot){
-        System.out.println("Sorry, but you have lost.");
-        canPlay = false;
-      }
-      if (p.size() == 0 && p instanceof Player){
-        System.out.println("Congratulations! You have won the game.");
-        canPlay = false;
-    }
-  }
-  return canPlay;
-}
 
   public void game(){
+    boolean canPlay = true;
     welcome();
     // runs until there is a clear winner
     // checks the size of each participant's hand & if it is empty
-    while ( keepPlaying() ){
+    while ( canPlay ){
       playTurns();
+      for (Participant p : totalParticipants){
+        if (p.size() == 0 && p instanceof Bot){
+          System.out.println("Sorry, but you have lost.");
+          canPlay = false;
+        }
+        if (p.size() == 0 && p instanceof Player){
+          System.out.println("Congratulations! You have won the game.");
+          canPlay = false;
+      }
+     }
     }
   }
 
