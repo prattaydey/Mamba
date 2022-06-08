@@ -27,11 +27,6 @@ public class Woo{
     totalBots = new Bot[0];
     user = new Player();
 
-<<<<<<< HEAD
-    // will be used to facilitate each participant's turns
-
-=======
->>>>>>> 5f546c1d3ce8d1e2ebc939dd15d9418ec819e7d5
     isr = new InputStreamReader(System.in);
     in = new BufferedReader(isr);
   }
@@ -117,14 +112,9 @@ public class Woo{
   public void game(){
     welcome();
     // runs until there is a clear winner
-<<<<<<< HEAD
-      // checks the size of each participant's hand & if it is empty
-    playTurns();
-=======
     // checks the size of each participant's hand & if it is empty
     while ( keepPlaying() ){
       playTurns();
->>>>>>> 5f546c1d3ce8d1e2ebc939dd15d9418ec819e7d5
     }
   }
 

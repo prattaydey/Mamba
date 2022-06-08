@@ -34,6 +34,11 @@ MID-DEVELOPMENT DESIGN CHANGES
 - Might possibly use ListIterator to get bi-directional functionality.
 
 LESSONS LEARNED
+- Trace.
+- Plan.
+- Consult resources like Java API.
+- Always have resources at hand. 
+- Communicate at all times.  
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 .
 ||||||||||||||||||||||||||||||||||||||||||
@@ -97,3 +102,7 @@ Kartik: Helping fix iterator.
 
 2022-06-06
 Kartik: Updated all files, updated README.
+Nafiz+Prattay: Worked on Woo.
+
+2022-06-07
+Prattay+Kartik+Nafiz: Worked on an issue in Woo.
