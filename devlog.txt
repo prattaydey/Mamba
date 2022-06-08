@@ -34,6 +34,11 @@ MID-DEVELOPMENT DESIGN CHANGES
 - Might possibly use ListIterator to get bi-directional functionality.
 
 LESSONS LEARNED
+- Trace.
+- Plan.
+- Consult resources like Java API.
+- Always have resources at hand. 
+- Communicate at all times.  
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 .
 ||||||||||||||||||||||||||||||||||||||||||
