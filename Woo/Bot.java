@@ -27,18 +27,13 @@ public class Bot extends Participant{
     if (canPlay == false){
       //else, if no valid cards in hand --> draw a card
       draw( curr );
-      System.out.println(name + " has to draw " + hand.get( hand.size() - 1) );
+      System.out.println(name + " cannot play a card from their hand.");
+      System.out.println(name + " has drawn a " + hand.get( hand.size() - 1) );
     }
   }
 
   public void draw( Deck curr ){
     hand.add( curr.draw() );
-
-    // checks to see if the new drawn card is able to be put on the pile
-    Card newCard = hand.get( hand.size() - 1);
-    if ( newCard.isValid (curr) ){
-      curr.useCard( newCard );
-    }
   }
 
   // will be changed later

@@ -38,10 +38,15 @@ public class Woo{
     }
     catch ( IOException e ) { }
     if (numBots > 0 && numBots < 4){
+      System.out.println("\n");
       System.out.println("Now playing with " + numBots + " bots.");
+      System.out.println("\n");
     }
     else{
+      System.out.println("\n");
       System.out.println("Invalid number of bots! Automatically playing against one bot.");
+      System.out.println("\n");
+      numBots = 1;
     }
 
     // adds all the participants, including player and her bots
@@ -90,7 +95,7 @@ public class Woo{
             user.draw(deck);
             cardPlayed = true;
           }
-          else if (cardIndex > 0 && cardIndex < user.size() ){
+          else if (cardIndex > 0 && cardIndex <= user.size() ){
             // else if index is valid, selects the inputted index
             // if not valid, repeats the loop and asks for another input
             cardPlayed = user.select(cardIndex, deck);
