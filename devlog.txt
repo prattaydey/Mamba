@@ -13,20 +13,20 @@ OBSTACLES OVERCOME
 - "Remix" method that takes into account when all cards in the deck are used up.
 - Fixed isValid method to take into account when the game has just started, and any card is valid to put down as the initial card in the pile.
 - Fixed Bot method that kept drawing cards from the deck multiple times within one turn.
+- Fixed error in the game where users could keep selecting invalid cards and essentially skipping their turn.
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 UNRESOLVED ISSUES
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 - Still need to implement the game running file.
-- Have to review Iterator, will likely use to go through each player's turns.
-- Still need to adjust game to take user input
 - Still need to implement functionality for skip, reverse, and other special cards.
-- When a Player draws a card and it is valid, will it be automatically put onto the pile, or will it be up to the player's decision?
-- java.util.ConcurrentModificationException
+- Still need to use remix() method
+- Need to use deque for special cards and reversing order
 
 COOL STUFF LEARNED
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 - If you're using ANSII colors and you don't want the whole terminal to change colors, there is a specific code to reset the color to its original state.
+- Be careful when using Iterator to traverse, as making any modifications to a data container while iterating over it while throw a ConcurrentModificationException.
 
 MID-DEVELOPMENT DESIGN CHANGES
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -38,8 +38,8 @@ LESSONS LEARNED
 - Trace.
 - Plan.
 - Consult resources like Java API.
-- Always have resources at hand. 
-- Communicate at all times.  
+- Always have resources at hand.
+- Communicate at all times.
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 .
 ||||||||||||||||||||||||||||||||||||||||||

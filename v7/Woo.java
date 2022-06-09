@@ -8,15 +8,14 @@ import java.io.InputStreamReader;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Deque;
-import java.util.ArrayDeque;
 
 public class Woo{
   private Deck deck;
   private int numBots;
-  private Deque<Participant> totalParticipants;
+  private ArrayList<Participant> totalParticipants;
+  private Participant[] totalBots;
   private Player user;
-  private String[] direction = {"FORWARDS", "BACKWARDS"};
+  private String[] direction = ["FORWARDS", "BACKWARDS"];
 
   private InputStreamReader isr;
   private BufferedReader in;
@@ -25,7 +24,8 @@ public class Woo{
   public Woo(){
     deck = new Deck();
     numBots = 1;
-    totalParticipants = new ArrayDeque<Participant>();
+    totalParticipants = new ArrayList<>();
+    totalBots = new Bot[0];
     user = new Player();
     isr = new InputStreamReader(System.in);
     in = new BufferedReader(isr);
@@ -91,8 +91,7 @@ public class Woo{
             cardPlayed = true;
           }
           else if (cardIndex > 0 && cardIndex < user.size() ){
-            // else if index is valid, selects the inputted index
-            // if not valid, repeats the loop and asks for another input
+            // else  if index is valid, selects the inputted index
             cardPlayed = user.select(cardIndex, deck);
           }
         }
