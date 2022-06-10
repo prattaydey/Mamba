@@ -6,10 +6,12 @@ FP
 */
 public class Bot extends Participant{
   private String name;
+  private String direction;
 
   public Bot(String name){
     super();
     this.name = name;
+    direction = "FORWARD";
   }
 
   public void select(Deck curr){
@@ -18,7 +20,14 @@ public class Bot extends Participant{
       Card card = hand.get(i);
       // finds the first valid card and selects it
       if ( card.isValid(curr) ){
-        System.out.println( name + " " + toString() + " plays " + card + " on " + curr.peekTop() );
+
+        if ( card.getColor().equals("Wild") ){
+          // range of 0-3 inclusive
+          int newColor = (int) ( Math.random() * 4 );
+          card.setColor( newColor );
+        }
+
+        System.out.println( name + " plays " + card + " on " + curr.peekTop() + ". Has " + ( hand.size() - 1 ) + " cards left." );
         curr.useCard( hand.remove(i) );
         canPlay = true;
         break;
@@ -32,17 +41,17 @@ public class Bot extends Participant{
     }
   }
 
+
   public void draw( Deck curr ){
+    if ( curr.isEmpty() ){
+      curr.remix();
+    }
     hand.add( curr.draw() );
   }
 
-  // will be changed later
+  // Don't want the player to see the bot's hand
   public String toString(){
-    String retVal = "[  ";
-    for (int i = 0; i < size(); i++){
-      retVal += hand.get(i) + "  ";
-    }
-    return retVal + "]";
+    return name;
   }
 
 

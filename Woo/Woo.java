@@ -1,4 +1,4 @@
-/*
+;/*
 Team Mamba: Prattay Dey, Kartik Vanjani, Nafiz Labib
 APCS PD8
 FP
@@ -16,7 +16,8 @@ public class Woo{
   private int numBots;
   private Deque<Participant> totalParticipants;
   private Player user;
-  private String[] direction = {"FORWARDS", "BACKWARDS"};
+  private String[] directionVals = {"FORWARD", "BACKWARD"};
+  private String direction;
 
   private InputStreamReader isr;
   private BufferedReader in;
@@ -27,6 +28,7 @@ public class Woo{
     numBots = 1;
     totalParticipants = new ArrayDeque<Participant>();
     user = new Player();
+    direction = "FORWARD";
     isr = new InputStreamReader(System.in);
     in = new BufferedReader(isr);
   }
@@ -38,14 +40,10 @@ public class Woo{
     }
     catch ( IOException e ) { }
     if (numBots > 0 && numBots < 4){
-      System.out.println("\n");
-      System.out.println("Now playing with " + numBots + " bots.");
-      System.out.println("\n");
+      System.out.println("\nNow playing with " + numBots + " bots.\n");
     }
     else{
-      System.out.println("\n");
-      System.out.println("Invalid number of bots! Automatically playing against one bot.");
-      System.out.println("\n");
+      System.out.println("\nInvalid number of bots! Automatically playing against one bot.\n");
       numBots = 1;
     }
 
@@ -55,12 +53,6 @@ public class Woo{
       totalParticipants.add(new Bot("Bot " + (i + 1)));
     }
 
-    // sets up the hand of each participant at the start of a game
-    // while ( it.hasNext() ){
-    //   Participant p = it.next();
-    //   p.setup( deck );
-    // }
-
     for (Participant p : totalParticipants){
       p.setup(deck);
     }
@@ -68,42 +60,56 @@ public class Woo{
 
   public void playTurns(){
     boolean cardPlayed = false;
+    Participant participant = totalParticipants.peekFirst();
 
-    for (Participant participant : totalParticipants) {
-      // checks to see if next participant is either a Player or a bot
-      // Participant participant = it.next();
-      if ( participant instanceof Bot ){
-        Bot bot = (Bot) participant;
-        bot.select( deck );
-      }
-      else{
-        user = (Player) participant;
+    if (direction.equals("REVERSE")) {
+      participant = totalParticipants.peekLast();
+    }
 
-        while ( cardPlayed == false ){
-          System.out.println( "The top of the deck is " + deck.peekTop() );
-          System.out.println("Your hand is " + participant);
-          System.out.println("Choose what card you would like to select (1 - " + (participant.size() ) + ") " + "OR draw from the deck (0)" );
+    // checks to see if next participant is either a Player or a bot
+    if ( participant instanceof Bot ){
+      Bot bot = (Bot) participant;
+      bot.select( deck );
+    }
 
-          int cardIndex = 0;
-          try {
-            cardIndex = Integer.parseInt(in.readLine());
-          }
-          catch ( IOException e ) { }
+    else{
+      user = (Player) participant;
 
-          // if input is 0, draw a card from deck
-          if (cardIndex == 0){
-            user.draw(deck);
-            cardPlayed = true;
-          }
-          else if (cardIndex > 0 && cardIndex <= user.size() ){
-            // else if index is valid, selects the inputted index
-            // if not valid, repeats the loop and asks for another input
-            cardPlayed = user.select(cardIndex, deck);
+      while ( cardPlayed == false ){
+        System.out.println( "\nThe top of the deck is " + deck.peekTop() );
+        System.out.println("Your hand is " + participant);
+        System.out.println("Choose what card you would like to select (1 - " + (participant.size() ) + ") " + "OR draw from the deck (0)" );
+
+        int cardIndex = 0;
+        try {
+          cardIndex = Integer.parseInt(in.readLine());
+        }
+        catch ( IOException e ) { }
+
+        System.out.println("\n-------------------------------\n");
+
+        // if input is 0, draw a card from deck
+        if (cardIndex == 0){
+          user.draw(deck);
+          cardPlayed = true;
+        }
+        else if (cardIndex > 0 && cardIndex <= user.size() ){
+          // else if index is valid, selects the inputted index
+          // if not valid, repeats the loop and asks for another input
+          cardPlayed = user.select(cardIndex, deck);
           }
         }
+
+        }
+
+      if (direction.equals("FORWARD")) {
+        totalParticipants.addLast( totalParticipants.removeFirst() );
+      }
+      else{ // if direction is Reverse
+        totalParticipants.addFirst( totalParticipants.removeLast() );
       }
     }
-  }
+
 
   public void game(){
     boolean canPlay = true;
